@@ -1,0 +1,128 @@
+/* Dark theme colors */
+/***  Base  ***/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  color: #b4bfc3;
+  background: #0057e7;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+.subtext {
+  margin-top: 6px;
+  color: #000;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  background: #FFF;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+.card .card__header, .card .card__body {
+  padding: 30px 32px;
+  color: #000;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-field {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(200, 200, 200, 0.09);
+  padding: 0 0 8px 0;
+  color: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+.input-field + label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 180ms;
+  color: rgba(180, 191, 195, 0.47);
+  transform-origin: 0% 50%;
+  will-change: transform;
+  font-size: 10px;
+}
+
+.input-field ~ .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  opacity: 0;
+  transform: scaleX(0);
+  background: #edeff0;
+  transition: transform 0ms linear 180ms, opacity 120ms ease-out;
+  will-change: transform, opacity;
+  z-index: 100;
+}
+
+.input-field:focus + label, .input-field:valid + label {
+  transform: translateY(-18px) scale(0.8);
+}
+
+.input-field:focus ~ .underline {
+  opacity: 1;
+  transform: scaleX(1);
+  transition: transform 180ms ease-out, opacity 120ms ease-in;
+}
+
+/***  Style  ***/
+.bg-topbar {
+  width: 100%;
+  height: 200px;
+  background: #ffa700;
+}
+
+#main {
+  margin-top: -100px;
+}
+
+.main__header {
+  padding: 0 32px;
+  margin-bottom: 20px;
+}
+
+.main__title {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: #FFF !important;
+  font-weight: bold;
+}

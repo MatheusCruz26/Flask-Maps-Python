@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{{ url_for('static', filename='stylesheets/materialize.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='stylesheets/materialize.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='stylesheets/style.css') }}" rel="stylesheet">
+
+
+    <script src="{{ url_for('static', filename='materialize.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='materialize.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJreVAZQXjFm9ODSZ6WW-obNS4keQ0RZs&libraries=places"></script>
+</head>
+
+<body>
+    <div class="bg-topbar"></div>
+    <section id="main" class="container">
+        <div class="main__header">
+            <h2 class="main__title"> Buscar rotas </h2>
+        </div>
+        <div class="card">
+            <div class="card__header">
+                <h2> Monte sua rota </h2>
+                <h3 class="subtext">Escolha sua origem e destino para traçar sua rota</h3>
+            </div>
+            <div class="card__body">
+                <div class="input-container">
+                    <input class="input-field" type="text" autocomplete="false" spellcheck="false" id="origem" required
+                        placeholder="">
+                    <label> Origem </label>
+                </div>
+                <br>
+                <div class="input-container">
+                    <input class="input-field" type="text" autocomplete="false" spellcheck="false" id="destino" required
+                        placeholder="">
+                    <label> Destino </label>
+                </div>
+                <br>
+                <a class="waves-effect waves-light btn" id="rota">Traçar rota</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="row" id="appendCards">
+            <div id="cards"></div>
+        </div>
+
+    </div>
+
+
+    <div class="row" id="container_maps"
+        style="display: flex;display: flex;justify-content: center;align-items: center;">
+        <div id="mapa" style="width: 80%;height: 500px;"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+
+</html>
